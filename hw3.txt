@@ -1,0 +1,7 @@
+1  | SELECT Name FROM Track WHERE Milliseconds IN (SELECT MAX(Milliseconds) FROM Track);
+2b | SELECT COUNT(DISTINCT TrackID) FROM ListeningTo WHERE ListenerID IN (SELECT ListenerID FROM Listener WHERE Nationality='Indian');
+3  | OK
+4  | OK
+5  |
+6  | SELECT Name FROM Artist WHERE ArtistID NOT IN (SELECT DISTINCT ArtistID FROM Track);
+7  |
